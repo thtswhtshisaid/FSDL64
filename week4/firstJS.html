@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>First JS Page</h1>
+    <p id="demo"></p>
+    <p id="maths"></p>
+    <button type="button" onclick="document.write(10+10);">CLick to get 10+10</button><br>
+    <p>Get result of z: </p><p id="result"></p>
+</body>
+</html>
+<script>
+    document.getElementById("demo").innerHTML="JS para using js";
+    document.getElementById("maths").innerHTML=5+6;
+    document.write(5+6);
+    window.alert(9+9);
+
+    let x=4;
+    let y=6;
+    let z=x+y;
+    document.getElementById("result").innerHTML=z;
+</script>
