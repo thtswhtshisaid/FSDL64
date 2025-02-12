@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Page to try Objects</h1>
+    <p id="first"></p><br>
+    <p id="second"></p>
+    <p id="third"></p>
+</body>
+</html>
+<script>
+    const person1={
+        firstname:"Ryan",
+        secondname:"Reji",
+        rollno:"64",
+        branch:"IT"
+    };
+    const person2={};
+    person2.firstname="Miguel";
+    person2.secondname="Lopes";
+    person2.rollno="28";
+    person2.branch="IT";
+    let x=person2.branch;
+    document.getElementById("first").innerHTML="The name of person 1 is:"+person1.firstname+" and of second is: "+person2.firstname+
+    "and both belong to branch: "+x;
+
+    //method
+    person1.name= function(){
+        return person1.firstname+" "+person1.secondname;
+    }
+    document.getElementById("second").innerHTML="Full name of person 1 is: "+person1.name;
+    //to delete
+    delete person1.age;
+
+    function person3(name, rollno, branch){
+        this.name=name;
+        this.rollno=rollno;
+        this.branch=branch;
+    }
+    const student=new person3("Savio", 50, "IT");
+    document.getElementById("third").innerHTML="Person 3 is: "+student.name;
+</script>
