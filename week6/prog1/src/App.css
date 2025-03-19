@@ -1,38 +1,77 @@
+/* src/App.css */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  display: grid;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+}
+
+/* Header styling */
+.header {
+  grid-area: header;
+  background-color: #4CAF50;
+  padding: 15px 20px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.login-button {
+  background-color: white;
+  color: #4CAF50;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Sidebar styling */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #333;
+  color: white;
+  padding: 0;
+}
+
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  padding: 20px;
+  transition: background-color 0.3s;
+}
+
+.nav-menu li:hover {
+  background-color: #444;
+  cursor: pointer;
+}
+
+/* Content area styling */
+.content {
+  grid-area: main;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+/* Footer styling */
+.footer {
+  grid-area: footer;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
 }
