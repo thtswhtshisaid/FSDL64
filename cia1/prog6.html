@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Text Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 50px;
+            font-weight: bold;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        button:hover{
+            background: #ff7e5f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gradient Text</h1>
+    <button>HELLO</button>
+</body>
+</html>
