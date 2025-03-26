@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Celsius to Farhenheit Convertor</h2>
+    <input type="number" placeholder="Enter Celsius Temperature" id="Celsius-input">
+    <button onclick="convertTemperature()">Convert Temperature</button>
+    <p>Farhenheit: </p><p id="result"></p>
+</body>
+</html>
+<script>
+    function convertTemperature(){
+        var celsius = document.getElementById("Celsius-input").value;
+        var farhenheit = (parseFloat (celsius) * 9/5) + 32;
+        document.getElementById("result").innerHTML = farhenheit;
+    }
+</script>

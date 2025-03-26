@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Background Change</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background 0.5s;
+        }
+
+        /* Dropdown styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .dropdown-button {
+            background: #ccc;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: inline-block;
+            border: 1px solid #888;
+        }
+
+        /* Dropdown menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: white;
+            border: 1px solid #aaa;
+            width: 120px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Style dropdown items */
+        .dropdown-menu label {
+            display: block;
+            padding: 8px;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .dropdown-menu label:hover {
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h2>Select a Color</h2>
+
+    <div class="dropdown">
+        <div class="dropdown-button" onclick="toggleDropdown()">Choose Color ▼</div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <input type="radio" id="red" name="color" value="red">
+            <label for="red">Red</label>
+
+            <input type="radio" id="blue" name="color" value="blue">
+            <label for="blue">Blue</label>
+
+            <input type="radio" id="green" name="color" value="green">
+            <label for="green">Green</label>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            var menu = document.getElementById("dropdownMenu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", function(event) {
+            var dropdown = document.querySelector(".dropdown");
+            if (!dropdown.contains(event.target)) {
+                document.getElementById("dropdownMenu").style.display = "none";
+            }
+        });
+
+        // Change background on radio selection
+        document.querySelectorAll('input[name="color"]').forEach((radio) => {
+            radio.addEventListener("change", function() {
+                document.body.style.backgroundColor = this.value;
+            });
+        });
+    </script>
+</body>
+</html>
