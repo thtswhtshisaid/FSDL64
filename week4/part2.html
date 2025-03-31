@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Part 1 - Code 1</title>
+</head>
+<body>
+    <h1>JavaScript Basics</h1>
+    <p id="result"></p>
+    <button onclick="runCode()">Run Script</button>
+
+    <script>
+        // Variables
+        let number1 = 10;
+        let number2 = 20;
+
+        // Operators
+        let sum = number1 + number2;
+
+        // Conditions
+        function checkSum() {
+            if (sum > 20) {
+                return "The sum is greater than 20.";
+            } else {
+                return "The sum is less than or equal to 20.";
+            }
+        }
+
+        // Loops
+        function runCode() {
+            let message = checkSum() + " Loop starts: ";
+            for (let i = 1; i <= 5; i++) {
+                message += i + " ";
+            }
+            document.getElementById("result").textContent = message;
+        }
+    </script>
+</body>
+</html>

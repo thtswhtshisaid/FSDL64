@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Part 2 - Code 1</title>
+</head>
+<body>
+    <h1>Arrays and Error Handling in JavaScript</h1>
+    <p id="arrayResult"></p>
+    <p id="errorMessage"></p>
+
+    <script>
+        // Arrays
+        let fruits = ["Apple", "Banana", "Cherry"];
+        let output = "Fruits: ";
+
+        fruits.forEach(fruit => {
+            output += fruit + " ";
+        });
+
+        // Strings
+        let message = "Learning JavaScript!";
+        let reversedMessage = message.split("").reverse().join("");
+
+        // Error Handling
+        try {
+            let index = 5; // Out of range
+            if (index >= fruits.length) {
+                throw new Error("Index out of range for the fruits array.");
+            }
+        } catch (error) {
+            document.getElementById("errorMessage").textContent = `Error: ${error.message}`;
+        }
+
+        document.getElementById("arrayResult").textContent = `${output} | Reversed String: ${reversedMessage}`;
+    </script>
+</body>
+</html>

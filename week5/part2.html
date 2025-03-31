@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Part 2 - Code 2</title>
+</head>
+<body>
+    <h1>Validations and Date Functions in JavaScript</h1>
+
+    <form id="form">
+        <label for="username">Username: </label>
+        <input type="text" id="username" placeholder="Enter username"><br>
+        <label for="dob">Date of Birth: </label>
+        <input type="date" id="dob"><br>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="validationMessage"></p>
+    <p id="currentDate"></p>
+
+    <script>
+        // Validations
+        document.getElementById("form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value;
+            const dob = document.getElementById("dob").value;
+
+            if (!username || !dob) {
+                document.getElementById("validationMessage").textContent = "Please fill in all fields!";
+            } else {
+                document.getElementById("validationMessage").textContent = `Welcome, ${username}!`;
+            }
+        });
+
+        // Dates
+        const today = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById("currentDate").textContent = `Today's date is: ${today.toLocaleDateString('en-US', options)}`;
+    </script>
+</body>
+</html>

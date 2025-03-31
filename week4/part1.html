@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Part 1 - Code 2</title>
+</head>
+<body>
+    <h1>Advanced JavaScript</h1>
+    <button id="greetButton">Click Me</button>
+    <p id="output"></p>
+
+    <script>
+        // Function
+        function greetUser(name) {
+            return `Hello, ${name}!`;
+        }
+
+        // Object
+        const user = {
+            name: "Ryan",
+            age: 25,
+            greet: function () {
+                return greetUser(this.name);
+            }
+        };
+
+        // Class
+        class Calculator {
+            constructor() {
+                this.history = [];
+            }
+
+            add(a, b) {
+                const result = a + b;
+                this.history.push(result);
+                return result;
+            }
+        }
+
+        // Event
+        document.getElementById("greetButton").addEventListener("click", function () {
+            const output = user.greet();
+            const calculator = new Calculator();
+            const calculation = calculator.add(5, 10);
+            document.getElementById("output").textContent = `${output} Calculation: ${calculation}`;
+        });
+    </script>
+</body>
+</html>

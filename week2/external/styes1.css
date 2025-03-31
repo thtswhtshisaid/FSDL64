@@ -1,0 +1,26 @@
+/* Syntax: Basic CSS */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Background color */
+}
+
+/* Styling table */
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 10px 0;
+    background-color: #ffffff; /* Table background */
+}
+
+th, td {
+    border: 1px solid #000;
+    text-align: center;
+    padding: 8px;
+}
+
+/* Styling list */
+ul {
+    list-style-type: square;
+    padding: 10px;
+    color: #333; /* Font color */
+}
